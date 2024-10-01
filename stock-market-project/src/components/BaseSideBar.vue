@@ -1,6 +1,6 @@
 <template>
   <template v-for="(menuItem, index) in menuList" :key="index">
-    <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
+    <q-item clickable :active="menuItem.label === 'Outbox'" @click="router.push(menuItem.route)" v-ripple>
       <q-item-section avatar>
         <q-icon :name="menuItem.icon" />
       </q-item-section>
@@ -13,16 +13,22 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
 const menuList = [
   {
     icon: 'home',
     label: 'Home',
-    separator: true
+    separator: true,
+    route: '/'
   },
   {
     icon: 'paid',
     label: 'Currencies',
-    separator: false
+    separator: false,
+    route: '/currencies'
   },
   {
     icon: 'currency_exchange',
@@ -30,7 +36,7 @@ const menuList = [
     separator: false
   },
   {
-    icon: 'error',
+    icon: 'store',
     label: 'Glocal Stock Market',
     separator: true
   },
@@ -40,7 +46,7 @@ const menuList = [
     separator: false
   },
   {
-    icon: 'feedback',
+    icon: 'watch',
     label: 'TimeZones',
     separator: false
   },
