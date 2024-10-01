@@ -1,47 +1,47 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../components/Home.vue'
-import CurrenciesView from '../components/Currencies.vue'
-import ExchangesView from '../components/Exchanges.vue'
-import GlocalStockMarketView from '../components/GlobalStockMarket.vue'
-import SplitsDataView from '../components/SplitsData.vue'
-import TimeZonesView from '../components/TimeZones.vue'
-import HelpView from '../components/help.vue'
+import Home from '../components/Home.vue'
+import Currencies from '../components/Currencies.vue'
+import Exchanges from '../components/Exchanges.vue'
+import GlocalStockMarket from '../components/GlobalStockMarket.vue'
+import SplitsData from '../components/SplitsData.vue'
+import TimeZones from '../components/TimeZones.vue'
+import Help from '../components/help.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: Home
   },
   {
     path: '/currencies',
     name: 'currencies',
-    component: CurrenciesView
+    component: Currencies
   },
   {
     path: '/exchanges',
     name: 'exchanges',
-    component: ExchangesView
+    component: Exchanges
   },
   {
     path: '/glocal-stock-market',
     name: 'glocal-stock-market',
-    component: GlocalStockMarketView
+    component: GlocalStockMarket
   },
   {
     path: '/splits-data',
     name: 'splits-data',
-    component: SplitsDataView
+    component: SplitsData
   },
   {
     path: '/timezones',
     name: 'timezones',
-    component: TimeZonesView
+    component: TimeZones
   },
   {
     path: '/help',
     name: 'help',
-    component: HelpView
+    component: Help
   }
 ]
 
