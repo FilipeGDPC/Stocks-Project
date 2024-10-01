@@ -11,7 +11,7 @@
     <q-drawer
       v-model="drawer"
       show-if-above
-      :width="200"
+      :width="250"
       :breakpoint="500"
       bordered
       :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'"
