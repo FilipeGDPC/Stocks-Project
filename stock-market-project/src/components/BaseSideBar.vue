@@ -8,7 +8,6 @@
         {{ menuItem.label }}
       </q-item-section>
     </q-item>
-    <q-separator :key="'sep' + index" v-if="menuItem.separator" />
   </template>
 </template>
 
@@ -21,40 +20,33 @@ const menuList = [
   {
     icon: 'home',
     label: 'Home',
-    separator: true,
     route: '/'
   },
   {
     icon: 'paid',
     label: 'Currencies',
-    separator: false,
     route: '/currencies'
   },
   {
     icon: 'currency_exchange',
     label: 'Exchanges',
-    separator: false
   },
   {
     icon: 'store',
     label: 'Glocal Stock Market',
-    separator: true
   },
   {
-    icon: 'settings',
-    label: 'Splits Data',
-    separator: false
+    icon: 'history',
+    label: 'Historical Data',
   },
   {
-    icon: 'watch',
-    label: 'TimeZones',
-    separator: false
+    icon: 'public',
+    label: 'Time Zones',
   },
   {
     icon: 'help',
     iconColor: 'primary',
     label: 'Help',
-    separator: false
   }
 ]
 </script>

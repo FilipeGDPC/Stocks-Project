@@ -3,7 +3,7 @@ import Home from '../components/Home.vue'
 import Currencies from '../components/Currencies.vue'
 import Exchanges from '../components/Exchanges.vue'
 import GlocalStockMarket from '../components/GlobalStockMarket.vue'
-import SplitsData from '../components/SplitsData.vue'
+import SplitsData from '../components/HistoricalData.vue'
 import TimeZones from '../components/TimeZones.vue'
 import Help from '../components/help.vue'
 

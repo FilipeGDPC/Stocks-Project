@@ -1,30 +1,22 @@
 <template>
   <!-- <div class="q-pa-md"> -->
   <q-layout view="hHh Lpr lff">
-    <q-header :class="$q.dark.isActive ? 'bg-secondary' : 'bg-black'">
+    <q-header class="bg-white text-black">
       <q-toolbar>
-        <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
-        <q-toolbar-title>Header</q-toolbar-title>
+        <q-toolbar-title>TradeSmart  <q-icon name="whatshot" /></q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="drawer"
-      show-if-above
-      :width="250"
-      :breakpoint="500"
-      bordered
-      :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'"
-    >
+    <q-drawer v-model="drawer" show-if-above :width="250" :breakpoint="500" bordered :mini="miniState"
+      @mouseenter="miniState = false" @mouseleave="miniState = true">
       <BaseSideBar />
     </q-drawer>
 
-    <q-page-container>
-      <q-page padding>
-        <p v-for="n in 1" :key="n">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil praesentium molestias
-          a adipisci, dolore vitae odit, quidem consequatur optio voluptates asperiores pariatur eos
-          numquam rerum delectus commodi perferendis voluptate?
+    <q-page-container class="bg-grey-1 ">
+      <q-page padding class="flex-center">
+        <p class="text-center">
+          Welcome to My Stock Market App, here you can find the latest information about the stock market and do the
+          right choice!
         </p>
       </q-page>
     </q-page-container>
@@ -37,4 +29,5 @@ import { ref } from 'vue'
 import BaseSideBar from './BaseSideBar.vue'
 
 const drawer = ref(true)
+const miniState = ref(true)
 </script>
