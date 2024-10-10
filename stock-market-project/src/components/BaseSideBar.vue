@@ -41,7 +41,7 @@ const menuList = [
   {
     icon: 'public',
     label: 'Time Zones',
-    route: '/time-zones'
+    route: '/timezones'
   },
   {
     icon: 'help',
@@ -53,6 +53,6 @@ const menuList = [
 
 <style scoped>
 .hover-highlight:hover {
-  background-color: #e0e0e0; /* Light grey background on hover */
+  background-color: #e0e0e0; 
 }
 </style>
