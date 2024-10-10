@@ -1,6 +1,6 @@
 <template>
   <template v-for="(menuItem, index) in menuList" :key="index">
-    <q-item clickable :active="menuItem.label === 'Outbox'" @click="router.push(menuItem.route)" v-ripple>
+    <q-item clickable @click="scrollToSection(menuItem.id)" v-ripple>
       <q-item-section avatar>
         <q-icon :name="menuItem.icon" />
       </q-item-section>
@@ -12,43 +12,42 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
 const menuList = [
   {
     icon: 'home',
     label: 'Home',
-    route: '/'
+    id: 'home-section'
   },
   {
     icon: 'paid',
     label: 'Currencies',
-    route: '/currencies'
+    id: 'currencies-section'
   },
   {
     icon: 'currency_exchange',
     label: 'Exchanges',
+    id: 'exchanges-section'
   },
   {
     icon: 'store',
     label: 'Glocal Stock Market',
+    id: 'stock-market-section'
   },
   {
     icon: 'history',
     label: 'Historical Data',
+    id: 'historical-data-section'
   },
   {
     icon: 'public',
     label: 'Time Zones',
+    id: 'time-zones-section'
   },
   {
     icon: 'help',
-    iconColor: 'primary',
     label: 'Help',
+    id: 'help-section'
   }
 ]
-</script>
 
-<style lang="scss" scoped></style>
+</script>
