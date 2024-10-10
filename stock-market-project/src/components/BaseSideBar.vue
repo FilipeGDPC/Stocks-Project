@@ -1,13 +1,13 @@
 <template>
   <template v-for="(menuItem, index) in menuList" :key="index">
-    <q-item clickable @click="scrollToSection(menuItem.id)" v-ripple>
+    <router-link :to="menuItem.route" class="q-item q-item-type row no-wrap q-item--clickable q-link hover-highlight">
       <q-item-section avatar>
         <q-icon :name="menuItem.icon" />
       </q-item-section>
       <q-item-section>
         {{ menuItem.label }}
       </q-item-section>
-    </q-item>
+    </router-link>
   </template>
 </template>
 
@@ -16,38 +16,43 @@ const menuList = [
   {
     icon: 'home',
     label: 'Home',
-    id: 'home-section'
+    route: '/'
   },
   {
     icon: 'paid',
     label: 'Currencies',
-    id: 'currencies-section'
+    route: '/currencies'
   },
   {
     icon: 'currency_exchange',
     label: 'Exchanges',
-    id: 'exchanges-section'
+    route: '/exchanges'
   },
   {
     icon: 'store',
     label: 'Glocal Stock Market',
-    id: 'stock-market-section'
+    route: '/glocal-stock-market'
   },
   {
     icon: 'history',
     label: 'Historical Data',
-    id: 'historical-data-section'
+    route: '/splits-data'
   },
   {
     icon: 'public',
     label: 'Time Zones',
-    id: 'time-zones-section'
+    route: '/time-zones'
   },
   {
     icon: 'help',
     label: 'Help',
-    id: 'help-section'
+    route: '/help'
   }
 ]
-
 </script>
+
+<style scoped>
+.hover-highlight:hover {
+  background-color: #e0e0e0; /* Light grey background on hover */
+}
+</style>
