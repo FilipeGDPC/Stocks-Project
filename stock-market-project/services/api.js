@@ -36,4 +36,4 @@ const globalstockmarket = axios.create({
 });
 
 
-export default api;
+export default {currenciesApi, exchangesApi, timezonesApi, tickersApi, globalstockmarket};
