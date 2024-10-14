@@ -29,7 +29,7 @@ const miniState = ref(true)
 
 <style scoped>
 .bg-stock-image {
-  background-image: url('https://www.marketplace.org/wp-content/uploads/2021/10/stockmarket.jpg?w=600');
+  background-image: url('https://img.freepik.com/vetores-gratis/padrao-de-grade-de-losango-dourado-sem-costura-em-fundo-preto_53876-97589.jpg?ga=GA1.1.1544741072.1728932876&semt=ais_hybrid');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
