@@ -1,12 +1,15 @@
 <template>
   <q-layout view="hHh Lpr lff">
-    <q-header class="bg-gray text-black">
+    <!-- <q-header class="bg-gray text-black">
       <q-toolbar>
-        <q-toolbar-title>TradeSmart <q-icon name="whatshot" /></q-toolbar-title>
+        
       </q-toolbar>
-    </q-header>
+    </q-header> -->
 
-    <q-drawer  v-model="drawer" show-if-above :width="230" :breakpoint="500" bordered>
+    <q-drawer class="q-pa-md" v-model="drawer" show-if-above :width="230" :breakpoint="500" bordered>
+      
+      <p class="text-h5">TradeSmart <q-icon name="whatshot" /></p>
+      <q-separator class="q-mb-md" />
       <BaseSideBar />
     </q-drawer>
 
