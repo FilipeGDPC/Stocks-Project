@@ -1,6 +1,6 @@
 <template>
   <div class="text-center text-white q-pa-md">
-    <p class="text-h4 q-mb-md welcome-text">Welcome to our financial data consultation platform!</p>
+    <p class="text-h4 welcome-text text-bold">Welcome to our financial data consultation platform!</p>
 
     <p class="text-h6 q-mt-xl description-text">On our site, you can easily access detailed information about the financial markets with
       just a few clicks. Powered by the Marketstack APIs, we offer a reliable and user-friendly platform where you
@@ -56,17 +56,11 @@ const goToRoute = (routeName) => {
 </script>
 
 <style scoped>
-.text-white {
-  color: white;
-}
 .welcome-text {
-  font-weight: 700;
   font-size: 2rem;
 }
 
 .description-text {
-  font-weight: 800;
   font-size: 1.2rem;
-  line-height: 1.6;
 }
 </style>

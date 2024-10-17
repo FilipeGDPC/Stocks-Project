@@ -6,12 +6,12 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="drawer" show-if-above :width="250" :breakpoint="500" bordered :mini="miniState"
-      @mouseenter="miniState = false" @mouseleave="miniState = true">
+    <q-drawer v-model="drawer" show-if-above :width="230" :breakpoint="500" bordered
+      >
       <BaseSideBar />
     </q-drawer>
 
-    <q-page-container class="bg-grey-1">
+    <q-page-container>
       <q-page padding class="bg-stock-image">
         <router-view />
       </q-page>
@@ -34,9 +34,5 @@ const miniState = ref(true)
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh; 
-}
-
-.text-white {
-  color: white;
 }
 </style>
