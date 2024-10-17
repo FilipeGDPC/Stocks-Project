@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainLayout from '../components/MainLayout.vue'
+import MainLayout from '../layouts/MainLayout.vue'
 import Home from '../components/Home.vue'
 import Currencies from '../components/Currencies.vue'
 import Exchanges from '../components/Exchanges.vue'
