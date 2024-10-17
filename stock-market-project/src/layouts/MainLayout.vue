@@ -1,13 +1,12 @@
 <template>
   <q-layout view="hHh Lpr lff">
-    <q-header class="bg-white text-black">
+    <q-header class="bg-black text-white">
       <q-toolbar>
         <q-toolbar-title>TradeSmart <q-icon name="whatshot" /></q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="drawer" show-if-above :width="230" :breakpoint="500" bordered
-      >
+    <q-drawer  v-model="drawer" show-if-above :width="230" :breakpoint="500" bordered>
       <BaseSideBar />
     </q-drawer>
 
@@ -34,5 +33,9 @@ const miniState = ref(true)
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh; 
+}
+
+.bg-black {
+  background-color: black;
 }
 </style>

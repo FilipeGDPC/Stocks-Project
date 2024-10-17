@@ -12,7 +12,7 @@
       decisions. That’s why we ensure that all queries made through our site are based on precise, up-to-date
       information from one of the most trusted sources in the industry. Explore and take advantage of having
       essential financial data like currency rates, exchange details, and global market insights at your
-      fingertips—completely free of charge!
+      fingertips completely free of charge!
     </p>
   </div>
 </template>
