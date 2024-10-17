@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center text-white q-mx-auto q-my-lg" style="max-width: 700px;">
+  <div class="text-center text-black q-mx-auto q-my-lg" style="max-width: 700px;">
     <p class="text-h4 welcome-text text-bold">Welcome to our financial data consultation platform!</p>
 
     <p class="text-h6 q-mt-xl description-text">On our site, you can easily access detailed information about the financial markets with

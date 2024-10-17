@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh Lpr lff">
-    <q-header class="bg-black text-white">
+    <q-header class="bg-gray text-black">
       <q-toolbar>
         <q-toolbar-title>TradeSmart <q-icon name="whatshot" /></q-toolbar-title>
       </q-toolbar>
@@ -28,14 +28,14 @@ const miniState = ref(true)
 
 <style scoped>
 .bg-stock-image {
-  background-image: url('https://img.freepik.com/vetores-gratis/padrao-de-grade-de-losango-dourado-sem-costura-em-fundo-preto_53876-97589.jpg?ga=GA1.1.1544741072.1728932876&semt=ais_hybrid');
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHf361ef5XB-imqMisjNxxVqmOxbVxQP7fRg&s');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh; 
 }
 
-.bg-black {
-  background-color: black;
+.bg-gray {
+  background-color: rgb(237, 237, 237);
 }
 </style>
