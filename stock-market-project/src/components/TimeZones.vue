@@ -1,6 +1,6 @@
 <template>
-  <div class="text-center text-black q-pa-md">
-    <p class="text-h4 q-mb-md">Time Zones</p>
+ <div class="text-center text-black q-mx-auto q-my-lg">
+  <p class="text-h4 text-bold">Time Zones</p>
   </div>
 </template>
 

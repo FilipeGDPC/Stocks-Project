@@ -1,6 +1,6 @@
 <template>
-    <div class="text-center text-black q-pa-md">
-      <p class="text-h4 q-mb-md">glocal-stock-market</p>
+   <div class="text-center text-black q-mx-auto q-my-lg">
+    <p class="text-h4 text-bold"">glocal-stock-market</p>
     </div>
   </template>
   
