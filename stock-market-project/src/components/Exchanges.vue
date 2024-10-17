@@ -8,7 +8,5 @@
   </script>
   
   <style scoped>
-  .text-white {
-    color: white;
-  }
+
   </style>
