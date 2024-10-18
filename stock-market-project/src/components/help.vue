@@ -1,33 +1,25 @@
 <template>
   <div>
-    <q-card class="q-mx-auto q-mt-xl" style="max-width: 550px; height: 300px;">
+    <q-card class="q-mx-auto q-mt-xl" style="max-width: 500px; height: 500px;">
       <q-card-section>
-        <div class="q-pa-md">
+        <div class="q-pa-lg">
           <p class="text-h4 text-center welcome-text text-bold q-mb-xl">Do you need help? Get in contact with us!</p>
           <div class="q-mt-lg text-center">
-            <q-btn
-              flat
-              round
-              color="primary"
-              icon="mdi-instagram"
-              @click="openLink('https://www.instagram.com/filipegdev/')"
-              class="q-mr-md"
-            />
-            <q-btn
-              flat
-              round
-              color="primary"
-              icon="mdi-github"
-              @click="openLink('https://github.com/FilipeGDPC')"
-              class="q-mr-md"
-            />
-            <q-btn
-              flat
-              round
-              color="primary"
-              icon="mdi-email"
-              @click="openLink('mailto:filipegama2411@gmail.com')"
-            />
+            <q-btn flat round class="q-mx-lg" @click="router.push('https://www.instagram.com/filipegdev/')">
+              <q-avatar size="42px">
+                <img src="../assets/img/instagram.svg">
+              </q-avatar>
+            </q-btn>
+            <q-btn flat round class="q-mx-lg" @click="router.push('https://github.com/FilipeGDPC')">
+              <q-avatar size="42px">
+                <img src="../assets/img/github.svg">
+              </q-avatar>
+            </q-btn>
+            <q-btn flat round class="q-mx-lg" @click="router.push('http://filipegama2411@gmail.com')">
+              <q-avatar size="42px">
+                <img src="../assets/img/gmail.svg">
+              </q-avatar>
+            </q-btn>
           </div>
         </div>
       </q-card-section>
@@ -36,9 +28,10 @@
 </template>
 
 <script setup>
-const openLink = (url) => {
-  window.open(url, '_blank');
-};
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
 </script>
 
 <style scoped>
