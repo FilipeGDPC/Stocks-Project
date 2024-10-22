@@ -1,9 +1,9 @@
 <template>
   <div>
-    <q-card class="q-mx-auto q-mt-xl" style="max-width: 500px; height: 500px;">
+    <q-card class="q-mx-auto q-mt-xl" style="max-width: 500px; height: 500px;"> 
       <q-card-section>
         <div class="q-pa-lg">
-          <p class="text-h4 text-center welcome-text text-bold q-mb-xl">Do you need help? Get in contact with us!</p>
+          <p class="text-h4 text-center welcome-text text-bold q-mb-xl">Do you need any help? Get in contact with us!</p>
           <div class="q-mt-lg text-center">
             <q-btn flat round class="q-mx-lg" @click="router.push('https://www.instagram.com/filipegdev/')">
               <q-avatar size="42px">
@@ -41,5 +41,6 @@ const router = useRouter();
 
 .welcome-text {
   font-size: 2rem;
+  height: 150px;
 }
 </style>
