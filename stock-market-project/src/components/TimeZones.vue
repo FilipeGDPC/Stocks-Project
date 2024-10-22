@@ -1,6 +1,6 @@
 <template>
-  <div class="row justify-center justify-beetween q-gutter-md q-mt-xl">
-    <q-card v-for="timezone in timezones" :key="timezone.name" class="col-3" style="border: 1px solid black;">
+  <div class="row justify-center q-gutter-md q-mt-xl">
+    <q-card v-for="timezone in timezones" :key="timezone.name" class="col-3 timezone-card">
       <q-card-section class="flex justify-between">
         <span class="text-h5">{{ timezone.name }} :</span>
         <span class="text-subtitle1">{{ timezone.offset }}</span>
@@ -63,5 +63,23 @@ const timezones = [
 </script>
 
 <style scoped>
+.timezone-card {
+  border: 1px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  padding: 16px;
+  transition: transform 0.2s;
+}
 
+.timezone-card:hover {
+  transform: translateY(-5px);
+}
+
+.text-h5 {
+  font-weight: bold;
+}
+
+.text-subtitle1 {
+  color: #555;
+}
 </style>
