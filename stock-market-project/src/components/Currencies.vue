@@ -1,8 +1,8 @@
 <template>
   <div class="row justify-center q-gutter-md q-mt-xl">
-    <q-card v-for="currency in currencies" :key="currency.name" class="col-3" style="border: 1px solid black;">
+    <q-card v-for="currency in currencies" :key="currency.name" class="bg-secondary q-pa-md col-3 transition" flat bordered>
       <q-card-section class="flex justify-between">
-        <span class="text-h5">{{ currency.name }} :</span>
+        <span class="text-h5 text-bold">{{ currency.name }} :</span>
         <div class="flex items-center">
           <span class="text-subtitle1">{{ currency.value }}</span>
           <q-icon
@@ -37,11 +37,11 @@ const currencies = [
 </script>
 
 <style scoped>
-.text-bold {
-  font-weight: bold;
+.transition {
+  transition: transform 0.2s;
 }
 
-.q-card-section {
-  padding: 16px;
+.transition:hover {
+  transform: translateY(-5px);
 }
 </style>
