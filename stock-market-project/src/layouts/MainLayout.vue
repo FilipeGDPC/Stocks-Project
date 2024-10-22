@@ -37,8 +37,4 @@ const miniState = ref(true)
   background-repeat: no-repeat;
   min-height: 100vh; 
 }
-
-.bg-gray {
-  background-color: rgb(237, 237, 237);
-}
 </style>
