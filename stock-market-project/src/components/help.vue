@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-card class="q-mx-auto q-mt-xl" style="max-width: 500px; height: 500px;"> 
+    <q-card class="q-mx-auto q-mt-xl q-card-underline" style="max-width: 500px; height: 500px;"> 
       <q-card-section>
         <div class="q-pa-lg">
           <p class="text-h4 text-center welcome-text text-bold q-mb-xl">Do you need any help? Get in contact with us!</p>
@@ -41,6 +41,10 @@ const router = useRouter();
 
 .welcome-text {
   font-size: 2rem;
-  height: 150px;
+  height: 100px;
+}
+
+.q-card-underline {
+  border: 1px solid rgb(142, 125, 125);
 }
 </style>
