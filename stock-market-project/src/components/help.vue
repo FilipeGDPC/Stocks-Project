@@ -41,7 +41,7 @@ const router = useRouter();
 
 .welcome-text {
   font-size: 2rem;
-  height: 100px;
+  height: 150px;
 }
 
 .q-card-underline {
