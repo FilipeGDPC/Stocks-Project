@@ -1,10 +1,10 @@
 <template>
   <div>
-    <q-card class="q-mx-auto q-mt-xl q-card-underline" style="max-width: 500px; height: 500px;"> 
+    <q-card class="q-mx-auto q-mt-xl q-card-underline" style="max-width: 500px; height: 450px;"> 
       <q-card-section>
         <div class="q-pa-lg">
-          <p class="text-h4 text-center welcome-text text-bold q-mb-xl">Do you need any help? Get in contact with us!</p>
           <div class="q-mt-lg text-center">
+            <p class="text-h4 text-center welcome-text text-bold q-mb-xl">Do you need any help? Get in contact with us!</p>
             <q-btn flat round class="q-mx-lg" @click="router.push('https://www.instagram.com/filipegdev/')">
               <q-avatar size="42px">
                 <img src="../assets/img/instagram.svg">
@@ -35,10 +35,6 @@ const router = useRouter();
 </script>
 
 <style scoped>
-.text-bold {
-  font-weight: bold;
-}
-
 .welcome-text {
   font-size: 2rem;
   height: 150px;
