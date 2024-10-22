@@ -1,10 +1,9 @@
 <template>
-  <p class="text-h4 text-bold text-center">Currencies</p>
-  <div class="flex q-my-lg q-gutter-md">
-    <q-card v-for="currency in currencies" class="q-pa-md currency-card" style="border: 1px solid black;">
-      <q-card-section class="text-center">
-        <p class="text-h5">{{ currency.name }}</p>
-        <p class="text-subtitle1">{{ currency.value }}</p>
+  <div class="row justify-center q-gutter-md q-mt-xl">
+    <q-card v-for="currency in currencies" class=" col-3" style="border: 1px solid black;">
+      <q-card-section class="flex justify-between">
+        <span class="text-h5">{{ currency.name }} :</span>
+        <span class="text-subtitle1">{{ currency.value }}</span>
       </q-card-section>
     </q-card>
   </div>
