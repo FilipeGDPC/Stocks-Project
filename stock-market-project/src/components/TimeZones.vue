@@ -1,10 +1,65 @@
 <template>
- <div class="text-center text-black q-mx-auto q-my-lg">
-  <p class="text-h4 text-bold">Time Zones</p>
+  <div class="row justify-center justify-beetween q-gutter-md q-mt-xl">
+    <q-card v-for="timezone in timezones" :key="timezone.name" class="col-3" style="border: 1px solid black;">
+      <q-card-section class="flex justify-between">
+        <span class="text-h5">{{ timezone.name }} :</span>
+        <span class="text-subtitle1">{{ timezone.offset }}</span>
+      </q-card-section>
+    </q-card>
   </div>
 </template>
 
 <script setup>
+const timezones = [
+  {
+    name: 'UTC',
+    offset: '+00:00'
+  },
+  {
+    name: 'EST',
+    offset: '-05:00'
+  },
+  {
+    name: 'CST',
+    offset: '-06:00'
+  },
+  {
+    name: 'MST',
+    offset: '-07:00'
+  },
+  {
+    name: 'PST',
+    offset: '-08:00'
+  },
+  {
+    name: 'HST',
+    offset: '-10:00'
+  },
+  {
+    name: 'GMT',
+    offset: '+00:00'
+  },
+  {
+    name: 'CET',
+    offset: '+01:00'
+  },
+  {
+    name: 'EET',
+    offset: '+02:00'
+  },
+  {
+    name: 'MSK',
+    offset: '+03:00'
+  },
+  {
+    name: 'JST',
+    offset: '+09:00'
+  },
+  {
+    name: 'AEDT',
+    offset: '+11:00'
+  }
+];
 </script>
 
 <style scoped>
