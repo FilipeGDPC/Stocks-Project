@@ -1,18 +1,31 @@
 <template>
-  <div class="row justify-center q-gutter-md q-mt-xl">
-    <q-card v-for="timezone in timezones" :key="timezone.timezone" class="bg-secondary q-pa-md col-3 transition" flat bordered>
-      <q-card-section class="flex justify-between">
-        <div>
-          <span class="text-h5 text-bold">{{ timezone.timezone }}</span>
-          <p class="text-subtitle1">Standard: {{ timezone.abbr }}</p>
-          <p class="text-subtitle1">Daylight: {{ timezone.abbr_dst }}</p>
-        </div>
-      </q-card-section>
-    </q-card>
+  <div class="q-pa-md">
+    <div class="row justify-center q-gutter-md q-mt-xl">
+      <q-card v-for="timezone in paginatedTimezones" :key="timezone.timezone" class="bg-secondary q-pa-md col-3 transition" flat bordered>
+        <q-card-section class="flex justify-between">
+          <div>
+            <span class="text-h5 text-bold">{{ timezone.timezone }}</span>
+            <p class="text-subtitle1">Standard: {{ timezone.abbr }}</p>
+            <p class="text-subtitle1">Daylight: {{ timezone.abbr_dst }}</p>
+          </div>
+        </q-card-section>
+      </q-card>
+    </div>
+    <div class="row justify-center q-mt-md">
+      <q-pagination
+        v-model="currentPage"
+        :max="maxPage"
+        color="primary"
+        boundary-numbers
+        size="lg"
+      />
+    </div>
   </div>
 </template>
 
 <script setup>
+import { ref, computed } from 'vue';
+
 const timezones = [
   {
     timezone: 'UTC',
@@ -73,8 +86,34 @@ const timezones = [
     timezone: 'Australia/Sydney',
     abbr: 'AEST',
     abbr_dst: 'AEDT'
+  },
+  {
+    timezone: 'Asia/Shanghai',
+    abbr: 'CST',
+    abbr_dst: 'CDT'
+  },
+  {
+    timezone: 'Asia/Kolkata',
+    abbr: 'IST',
+    abbr_dst: 'IST'
+  },
+  {
+    timezone: 'Africa/Johannesburg',
+    abbr: 'SAST',
+    abbr_dst: 'SAST'
   }
 ];
+
+const itemsPerPage = 12;
+const currentPage = ref(1);
+
+const paginatedTimezones = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  return timezones.slice(start, end);
+});
+
+const maxPage = computed(() => Math.ceil(timezones.length / itemsPerPage));
 </script>
 
 <style scoped>
@@ -84,9 +123,5 @@ const timezones = [
 
 .transition:hover {
   transform: translateY(-5px);
-}
-
-.text-bold {
-  font-weight: bold;
 }
 </style>
