@@ -55,11 +55,11 @@ const columns = [
   { name: 'low', align: 'left', label: 'Low', field: 'low', sortable: true },
   { name: 'close', align: 'left', label: 'Close', field: 'close', sortable: true },
   { name: 'volume', align: 'left', label: 'Volume', field: 'volume', sortable: true },
-  { name: 'adj_open', align: 'left', label: 'Adj Open', field: 'adj_open', sortable: true },
-  { name: 'adj_high', align: 'left', label: 'Adj High', field: 'adj_high', sortable: true },
-  { name: 'adj_low', align: 'left', label: 'Adj Low', field: 'adj_low', sortable: true },
-  { name: 'adj_close', align: 'left', label: 'Adj Close', field: 'adj_close', sortable: true },
-  { name: 'adj_volume', align: 'left', label: 'Adj Volume', field: 'adj_volume', sortable: true }
+  { name: 'adjusted_open', align: 'left', label: 'adjusted Open', field: 'adjusted_open', sortable: true },
+  { name: 'adjusted_high', align: 'left', label: 'adjusted High', field: 'adjusted_high', sortable: true },
+  { name: 'adjusted_low', align: 'left', label: 'adjusted Low', field: 'adjusted_low', sortable: true },
+  { name: 'adjusted_close', align: 'left', label: 'adjusted Close', field: 'adjusted_close', sortable: true },
+  { name: 'adjusted_volume', align: 'left', label: 'adjusted Volume', field: 'adjusted_volume', sortable: true }
 ];
 
 const rows = [
@@ -72,11 +72,11 @@ const rows = [
     low: 165.93,
     close: 166.52,
     volume: 32668138.0,
-    adj_open: 164.0861621594,
-    adj_high: 166.0713924395,
-    adj_low: 163.073891274,
-    adj_close: 163.6537357617,
-    adj_volume: 32668138.0
+    adjusted_open: 164.0861621594,
+    adjusted_high: 166.0713924395,
+    adjusted_low: 163.073891274,
+    adjusted_close: 163.6537357617,
+    adjusted_volume: 32668138.0
   },
   {
     date: '2019-02-01T00:00:00+0000',
@@ -87,11 +87,11 @@ const rows = [
     low: 165.93,
     close: 166.52,
     volume: 32668138.0,
-    adj_open: 164.0861621594,
-    adj_high: 166.0713924395,
-    adj_low: 163.073891274,
-    adj_close: 163.6537357617,
-    adj_volume: 32668138.0
+    adjusted_open: 164.0861621594,
+    adjusted_high: 166.0713924395,
+    adjusted_low: 163.073891274,
+    adjusted_close: 163.6537357617,
+    adjusted_volume: 32668138.0
   },
   {
     date: '2019-02-01T00:00:00+0000',
@@ -102,11 +102,11 @@ const rows = [
     low: 165.93,
     close: 166.52,
     volume: 32668138.0,
-    adj_open: 164.0861621594,
-    adj_high: 166.0713924395,
-    adj_low: 163.073891274,
-    adj_close: 163.6537357617,
-    adj_volume: 32668138.0
+    adjusted_open: 164.0861621594,
+    adjusted_high: 166.0713924395,
+    adjusted_low: 163.073891274,
+    adjusted_close: 163.6537357617,
+    adjusted_volume: 32668138.0
   },
   {
     date: '2019-02-01T00:00:00+0000',
@@ -117,11 +117,11 @@ const rows = [
     low: 165.93,
     close: 166.52,
     volume: 32668138.0,
-    adj_open: 164.0861621594,
-    adj_high: 166.0713924395,
-    adj_low: 163.073891274,
-    adj_close: 163.6537357617,
-    adj_volume: 32668138.0
+    adjusted_open: 164.0861621594,
+    adjusted_high: 166.0713924395,
+    adjusted_low: 163.073891274,
+    adjusted_close: 163.6537357617,
+    adjusted_volume: 32668138.0
   },
   {
     date: '2019-02-01T00:00:00+0000',
@@ -132,11 +132,11 @@ const rows = [
     low: 165.93,
     close: 166.52,
     volume: 32668138.0,
-    adj_open: 164.0861621594,
-    adj_high: 166.0713924395,
-    adj_low: 163.073891274,
-    adj_close: 163.6537357617,
-    adj_volume: 32668138.0
+    adjusted_open: 164.0861621594,
+    adjusted_high: 166.0713924395,
+    adjusted_low: 163.073891274,
+    adjusted_close: 163.6537357617,
+    adjusted_volume: 32668138.0
   },
   // Adicione mais dados aqui se necessário
 ];
