@@ -1,5 +1,6 @@
 <template>
   <div class="q-pa-md">
+    <h6>Time Zones</h6>
     <div class="row justify-center q-gutter-md q-mt-xl">
       <q-card v-for="timezone in paginatedTimezones" :key="timezone.timezone" class="bg-secondary q-pa-md col-3 transition" flat bordered>
         <q-card-section class="flex justify-between">

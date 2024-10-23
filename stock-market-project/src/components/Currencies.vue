@@ -7,6 +7,16 @@
       :columns="columns"
       row-key="code"
     >
+      <template v-slot:body-cell-change="props">
+        <q-td :props="props">
+          <q-icon 
+            :name="props.row.change > 0 ? 'arrow_upward' : 'arrow_downward'" 
+            :color="props.row.change > 0 ? 'green' : 'red'" 
+            class="q-mr-sm"
+          />
+          {{ props.row.change }}
+        </q-td>
+      </template>
     </q-table>
   </div>
 </template>
@@ -63,10 +73,11 @@ const currencies = [
     symbol_native: 'C$',
     change: 0.01 // Positive value indicates an increase
   }
-  
 ];
 </script>
 
 <style scoped>
-
+.q-mr-sm {
+  margin-right: 0.5rem;
+}
 </style>
