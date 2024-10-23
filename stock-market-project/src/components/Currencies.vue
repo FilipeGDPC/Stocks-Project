@@ -1,47 +1,78 @@
 <template>
-  <div class="row justify-center q-gutter-md q-mt-xl">
-    <q-card v-for="currency in currencies" :key="currency.name" class="bg-secondary q-pa-md col-3 transition" flat bordered>
-      <q-card-section class="flex justify-between">
-        <span class="text-h5 text-bold">{{ currency.name }} :</span>
-        <div class="flex items-center">
-          <span class="text-subtitle1">{{ currency.value }}</span>
-          <q-icon
-            :name="currency.change > 0 ? 'arrow_upward' : 'arrow_downward'"
-            :color="currency.change > 0 ? 'green' : 'red'"
-            class="q-ml-sm"
-          />
-        </div>
-      </q-card-section>
-    </q-card>
+  <div class="q-pa-md">
+    <q-table 
+      flat bordered
+      title="Currencies"
+      :rows="currencies"
+      :columns="columns"
+      row-key="code"
+    >
+      <template v-slot:body-cell="props">
+        <q-td :props="props">
+          <q-badge v-if="props.col.name === 'change'" :color="props.value > 0 ? 'green' : 'red'" :label="props.value > 0 ? '↑' : '↓'" />
+          <q-badge v-else :color="props.col.name === 'blue'" :label="props.value" />
+        </q-td>
+      </template>
+    </q-table>
   </div>
 </template>
 
 <script setup>
+const columns = [
+  { name: 'code', required: true, label: 'Code', align: 'left', field: row => row.code, format: val => `${val}`, sortable: true },
+  { name: 'name', align: 'left', label: 'Name', field: 'name', sortable: true },
+  { name: 'symbol', align: 'left', label: 'Symbol', field: 'symbol', sortable: true },
+  { name: 'symbol_native', align: 'left', label: 'Native Symbol', field: 'symbol_native', sortable: true },
+  { name: 'change', align: 'left', label: 'Change', field: 'change', sortable: true }
+];
+
 const currencies = [
   {
-    name: 'USD',
-    value: 1.0,
+    code: 'USD',
+    name: 'US Dollar',
+    symbol: '$',
+    symbol_native: '$',
     change: 0.02 // Positive value indicates an increase
   },
   {
-    name: 'EUR',
-    value: 0.85,
+    code: 'EUR',
+    name: 'Euro',
+    symbol: '€',
+    symbol_native: '€',
     change: -0.01 // Negative value indicates a decrease
   },
   {
-    name: 'JPY',
-    value: 110.0,
+    code: 'JPY',
+    name: 'Japanese Yen',
+    symbol: '¥',
+    symbol_native: '¥',
     change: 0.5 // Positive value indicates an increase
+  },
+  {
+    code: 'GBP',
+    name: 'British Pound',
+    symbol: '£',
+    symbol_native: '£',
+    change: 0.03 // Positive value indicates an increase
+  },
+  {
+    code: 'AUD',
+    name: 'Australian Dollar',
+    symbol: 'A$',
+    symbol_native: 'A$',
+    change: -0.02 // Negative value indicates a decrease
+  },
+  {
+    code: 'CAD',
+    name: 'Canadian Dollar',
+    symbol: 'C$',
+    symbol_native: 'C$',
+    change: 0.01 // Positive value indicates an increase
   }
+  
 ];
 </script>
 
 <style scoped>
-.transition {
-  transition: transform 0.2s;
-}
 
-.transition:hover {
-  transform: translateY(-5px);
-}
 </style>
