@@ -1,9 +1,12 @@
 <template>
   <div class="row justify-center q-gutter-md q-mt-xl">
-    <q-card v-for="timezone in timezones" :key="timezone.name" class="bg-secondary q-pa-md col-3 transition" flat bordered>
+    <q-card v-for="timezone in timezones" :key="timezone.timezone" class="bg-secondary q-pa-md col-3 transition" flat bordered>
       <q-card-section class="flex justify-between">
-        <span class="text-h5 text-bold">{{ timezone.name }} :</span>
-        <span class="text-subtitle1">{{ timezone.offset }}</span>
+        <div>
+          <span class="text-h5 text-bold">{{ timezone.timezone }}</span>
+          <p class="text-subtitle1">Standard: {{ timezone.abbr }}</p>
+          <p class="text-subtitle1">Daylight: {{ timezone.abbr_dst }}</p>
+        </div>
       </q-card-section>
     </q-card>
   </div>
@@ -12,52 +15,64 @@
 <script setup>
 const timezones = [
   {
-    name: 'UTC',
-    offset: '+00:00'
+    timezone: 'UTC',
+    abbr: 'UTC',
+    abbr_dst: 'UTC'
   },
   {
-    name: 'EST',
-    offset: '-05:00'
+    timezone: 'America/New_York',
+    abbr: 'EST',
+    abbr_dst: 'EDT'
   },
   {
-    name: 'CST',
-    offset: '-06:00'
+    timezone: 'America/Chicago',
+    abbr: 'CST',
+    abbr_dst: 'CDT'
   },
   {
-    name: 'MST',
-    offset: '-07:00'
+    timezone: 'America/Denver',
+    abbr: 'MST',
+    abbr_dst: 'MDT'
   },
   {
-    name: 'PST',
-    offset: '-08:00'
+    timezone: 'America/Los_Angeles',
+    abbr: 'PST',
+    abbr_dst: 'PDT'
   },
   {
-    name: 'HST',
-    offset: '-10:00'
+    timezone: 'Pacific/Honolulu',
+    abbr: 'HST',
+    abbr_dst: 'HST'
   },
   {
-    name: 'GMT',
-    offset: '+00:00'
+    timezone: 'Europe/London',
+    abbr: 'GMT',
+    abbr_dst: 'BST'
   },
   {
-    name: 'CET',
-    offset: '+01:00'
+    timezone: 'Europe/Berlin',
+    abbr: 'CET',
+    abbr_dst: 'CEST'
   },
   {
-    name: 'EET',
-    offset: '+02:00'
+    timezone: 'Europe/Athens',
+    abbr: 'EET',
+    abbr_dst: 'EEST'
   },
   {
-    name: 'MSK',
-    offset: '+03:00'
+    timezone: 'Europe/Moscow',
+    abbr: 'MSK',
+    abbr_dst: 'MSD'
   },
   {
-    name: 'JST',
-    offset: '+09:00'
+    timezone: 'Asia/Tokyo',
+    abbr: 'JST',
+    abbr_dst: 'JST'
   },
   {
-    name: 'AEDT',
-    offset: '+11:00'
+    timezone: 'Australia/Sydney',
+    abbr: 'AEST',
+    abbr_dst: 'AEDT'
   }
 ];
 </script>
@@ -69,5 +84,9 @@ const timezones = [
 
 .transition:hover {
   transform: translateY(-5px);
+}
+
+.text-bold {
+  font-weight: bold;
 }
 </style>
