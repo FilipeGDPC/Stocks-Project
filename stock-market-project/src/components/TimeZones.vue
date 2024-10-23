@@ -1,27 +1,28 @@
 <template>
-  <div class="q-pa-md">
-    <h6>Time Zones</h6>
-    <div class="row justify-center q-gutter-md q-mt-xl">
-      <q-card v-for="timezone in paginatedTimezones" :key="timezone.timezone" class="bg-secondary q-pa-md col-3 transition" flat bordered>
-        <q-card-section class="flex justify-between">
-          <div>
-            <span class="text-h5 text-bold">{{ timezone.timezone }}</span>
-            <p class="text-subtitle1">Standard: {{ timezone.abbr }}</p>
-            <p class="text-subtitle1">Daylight: {{ timezone.abbr_dst }}</p>
-          </div>
-        </q-card-section>
-      </q-card>
-    </div>
-    <div class="row justify-center q-mt-md">
-      <q-pagination
-        v-model="currentPage"
-        :max="maxPage"
-        color="primary"
-        boundary-numbers
-        size="lg"
-      />
-    </div>
-  </div>
+   <div class="q-pa-md q-mt-md">
+     <p class="text-h6 q-mx-sm">Time Zones</p>
+  
+      <div class="row">
+        <q-card v-for="timezone in paginatedTimezones" :key="timezone.timezone" class="q-pa-md col-3 transition" flat bordered>
+          <q-card-section class="flex justify-between">
+            <div>
+              <span class="text-h5 text-bold">{{ timezone.timezone }}</span>
+              <p class="text-subtitle1">Standard: {{ timezone.abbr }}</p>
+              <p class="text-subtitle1">Daylight: {{ timezone.abbr_dst }}</p>
+            </div>
+          </q-card-section>
+        </q-card>
+      </div>
+      <div class="row justify-center q-mt-md">
+        <q-pagination
+          v-model="currentPage"
+          :max="maxPage"
+          color="primary"
+          boundary-numbers
+          size="lg"
+        />
+      </div>
+   </div>
 </template>
 
 <script setup>
