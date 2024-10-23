@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md">
+  <div class="q-pa-md q-gutter-md q-mt-lg">
     <q-table 
       flat bordered
       title="Currencies"
