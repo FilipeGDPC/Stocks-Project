@@ -7,12 +7,6 @@
       :columns="columns"
       row-key="code"
     >
-      <template v-slot:body-cell="props">
-        <q-td :props="props">
-          <q-badge v-if="props.col.name === 'change'" :color="props.value > 0 ? 'green' : 'red'" :label="props.value > 0 ? '↑' : '↓'" />
-          <q-badge v-else :color="props.col.name === 'blue'" :label="props.value" />
-        </q-td>
-      </template>
     </q-table>
   </div>
 </template>
