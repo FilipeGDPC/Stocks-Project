@@ -1,32 +1,48 @@
 <template>
-   <div class="q-pa-md q-mt-md">
-     <p class="text-h6 q-mx-sm">Time Zones</p>
-  
-      <div class="row">
-        <q-card v-for="timezone in paginatedTimezones" :key="timezone.timezone" class="q-pa-md col-3 transition" flat bordered>
-          <q-card-section class="flex justify-between">
-            <div>
-              <span class="text-h5 text-bold">{{ timezone.timezone }}</span>
-              <p class="text-subtitle1">Standard: {{ timezone.abbr }}</p>
-              <p class="text-subtitle1">Daylight: {{ timezone.abbr_dst }}</p>
-            </div>
-          </q-card-section>
-        </q-card>
-      </div>
-      <div class="row justify-center q-mt-md">
-        <q-pagination
-          v-model="currentPage"
-          :max="maxPage"
-          color="primary"
-          boundary-numbers
-          size="lg"
-        />
-      </div>
-   </div>
+  <div class="q-pa-md">
+    <q-table
+      title="Time Zones"
+      :rows="timezones"
+      :columns="columns"
+      row-key="timezone"
+      :filter="filter"
+      grid
+      hide-header
+      :rows-per-page-options="[16,20,24,28,32]"
+    >
+      <template v-slot:top-right>
+        <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+          <template v-slot:append>
+            <q-icon name="search" />
+          </template>
+        </q-input>
+      </template>
+
+      <template v-slot:item="props">
+        <div class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-style-transition">
+          <q-card bordered flat>
+            <q-card-section>
+              <div class="text-bold">{{ props.row.timezone }}</div>
+              <p class="text-subtitle1">Standard: {{ props.row.abbr }}</p>
+              <p class="text-subtitle1">Daylight: {{ props.row.abbr_dst }}</p>
+            </q-card-section>
+          </q-card>
+        </div>
+      </template>
+    </q-table>
+  </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
+
+const filter = ref('');
+
+const columns = [
+  { name: 'timezone', required: true, label: 'Timezone', align: 'left', field: row => row.timezone, format: val => `${val}`, sortable: true },
+  { name: 'abbr', align: 'left', label: 'Standard Abbreviation', field: 'abbr', sortable: true },
+  { name: 'abbr_dst', align: 'left', label: 'Daylight Abbreviation', field: 'abbr_dst', sortable: true }
+];
 
 const timezones = [
   {
@@ -103,27 +119,21 @@ const timezones = [
     timezone: 'Africa/Johannesburg',
     abbr: 'SAST',
     abbr_dst: 'SAST'
+  },
+  {
+    timezone: 'Africa/Johannesburg',
+    abbr: 'SAST',
+    abbr_dst: 'SAST'
   }
 ];
-
-const itemsPerPage = 12;
-const currentPage = ref(1);
-
-const paginatedTimezones = computed(() => {
-  const start = (currentPage.value - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  return timezones.slice(start, end);
-});
-
-const maxPage = computed(() => Math.ceil(timezones.length / itemsPerPage));
 </script>
 
 <style scoped>
-.transition {
+.grid-style-transition {
   transition: transform 0.2s;
 }
 
-.transition:hover {
+.grid-style-transition:hover {
   transform: translateY(-5px);
 }
 </style>
