@@ -8,6 +8,7 @@
       :filter="filter"
       grid
       hide-header
+      :rows-per-page-options="[4, 8, 12, 16]"
     >
       <template v-slot:top-right>
         <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
