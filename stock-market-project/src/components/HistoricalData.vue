@@ -143,11 +143,5 @@ const rows = [
 </script>
 
 <style scoped>
-.grid-style-transition {
-  transition: transform 0.2s;
-}
 
-.grid-style-transition:hover {
-  transform: translateY(-5px);
-}
 </style>
